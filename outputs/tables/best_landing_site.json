@@ -1,0 +1,23 @@
+{
+  "rank": 1,
+  "site_id": 468,
+  "area_km2": 0.55,
+  "mean_score": 0.8621,
+  "max_score": 0.946,
+  "mean_slope_deg": 1.99,
+  "max_slope_deg": 4.2,
+  "mean_illumination": 0.3412,
+  "mean_dist_ice_km": 2.639,
+  "min_dist_ice_km": 2.11,
+  "mean_roughness_deg": 0.933,
+  "mean_elevation_m": -533.3,
+  "centroid_lat": 16965.08174,
+  "centroid_lon": 8678.66429,
+  "pixel_row": 438,
+  "pixel_col": 644,
+  "nearest_ice_row": 435,
+  "nearest_ice_col": 618,
+  "nearest_ice_lat": 17350.0,
+  "nearest_ice_lon": 6070.0,
+  "isro_justification": "Site #1 is recommended as the primary landing target. Mean slope of 2.0\u00b0 is below the 10\u00b0 stability threshold (Arvidson 2002), ensuring safe touchdown and rover mobility. Mean illumination of 34.1% exceeds the 20% minimum required for continuous solar power and Earth communications (Mazarico 2011). The nearest high-confidence ice-trap region is only 2.11 km away, achievable in a single rover traverse session. The site lies adjacent to \u2014 but not inside \u2014 the deep PSR, giving access to both illuminated terrain and the cold-trap ice resource, consistent with the dual-objective design of Chandrayaan-3 and the ISRO Lunar Polar Exploration mission concept."
+}
