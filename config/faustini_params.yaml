@@ -1,0 +1,71 @@
+# Faustini Terrain Analysis — Pipeline Configuration
+#
+# Centralizes the parameters used across src/terrain_analysis/. These
+# values are reproduced from the original notebook (PSR_Mapping_original.ipynb)
+# and are NOT currently read automatically by the src/ modules (which take
+# parameters as function arguments with these same values as defaults) —
+# this file exists as a single-source reference for the pipeline's actual
+# configuration, and as a starting point if you want to wire up
+# config-driven runs in the future.
+
+dem:
+  path: "faustini_test_dem_100m.tif"   # not committed — see docs/datasets.md
+  pixel_size_m: 100
+  faustini_lat_deg: -87.3
+  faustini_lon_deg: 84.5               # used by illumination.compute_solar_ephemeris
+  # Note: candidate ice-trap / landing-site region-of-interest cropping
+  # (illumination.compute_regional_psr_area) uses a separate hardcoded
+  # pixel-space center (center_col=980, center_row=190, radius_px=210)
+  # specific to this DEM's grid — see src/terrain_analysis/illumination.py
+
+horizon_angles:
+  n_azimuths: 72                        # 5 deg spacing (Mazarico et al. 2011 used 720 / 0.5 deg spacing)
+  max_dist_m: 50000                     # NOTE: an earlier notebook config cell used 100000 m;
+                                         # 50000 m is the value that actually produced the saved
+                                         # horizon_angles.npy — see docs/methodology.md
+  chunk_rows: 100
+  r_moon_m: 1737400.0
+
+solar_ephemeris:
+  sim_years: 1
+  sun_timestep_h: 6
+  t_start_iso: "2024-01-01T00:00:00"
+  batch_size: 50
+
+illumination:
+  chunk_rows: 100
+  # PSR definition: illumination_fraction == 0.0 exactly (no additional threshold)
+
+ice_trap_detection:
+  pixel_size_m: 100
+  weights:
+    illumination: 0.30
+    depression: 0.25
+    slope: 0.20
+    rim_depth: 0.25
+  min_cluster_area_km2: 0.5
+  local_relief_radius_px: 5             # 500 m at 100 m/pixel
+  rim_radius_px: 200                    # 20 km at 100 m/pixel
+  candidate_percentile: 80              # top 20%
+  high_confidence_percentile: 90        # top 10%
+
+landing_site_scoring:
+  pixel_size_m: 100
+  weights:
+    slope: 0.35
+    illumination: 0.25
+    ice_proximity: 0.25
+    roughness: 0.15
+  hard_constraints:
+    max_slope_deg: 10.0                 # Arvidson et al. 2002
+    min_illumination_fraction: 0.20     # Mazarico et al. 2011
+    max_roughness_deg: 5.0
+    exclude_deep_psr_illumination_below: 0.05
+  roughness_window_px: 5                # 500 m at 100 m/pixel
+  site_score_percentile: 70             # top 30% of landable pixels
+  min_site_area_km2: 0.1
+
+terrain_processing:
+  hillshade_azimuth_deg: 315
+  hillshade_altitude_deg: 45
+  pixel_size_m: 100
