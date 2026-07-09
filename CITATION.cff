@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it as below. This repository
+  covers the Terrain Analysis module of the LIRAF project — see
+  docs/team_contributions.md for full team attribution, and
+  docs/references.md for the underlying scientific methodology this
+  code implements (in particular Mazarico et al. 2011).
+type: software
+title: >-
+  LIRAF Terrain Analysis Module: DEM Processing, PSR Mapping & Landing
+  Site Selection for Lunar South Polar Ice Detection
+authors:
+  - family-names: Saini
+    given-names: Anjali
+    affiliation: National Institute of Technology Patna
+repository-code: "https://github.com/anjali-014/LIRAF"
+abstract: >-
+  An open-source Python framework for terrain analysis of the lunar
+  south pole, including horizon-angle modeling, solar illumination
+  analysis, Permanently Shadowed Region (PSR) mapping, candidate
+  ice-trap detection, and landing-site selection using
+  Chandrayaan-2-derived DEM data. Developed as the Terrain Analysis
+  module of Team LunaForge's LIRAF project for the Bharatiya
+  Antariksh Hackathon (BAH) 2026.
+keywords:
+  - lunar science
+  - planetary remote sensing
+  - permanently shadowed regions
+  - PSR
+  - ice detection
+  - landing site selection
+  - GIS
+  - terrain analysis
+  - Chandrayaan-2
+  - BAH 2026
+license: MIT
+version: 1.0.0
+date-released: "2026-07-09"
+references:
+  - type: article
+    authors:
+      - family-names: Mazarico
+        given-names: Erwan
+      - family-names: Neumann
+        given-names: Gregory A.
+      - family-names: Smith
+        given-names: David E.
+      - family-names: Zuber
+        given-names: Maria T.
+      - family-names: Torrence
+        given-names: Mark H.
+    title: "Illumination Conditions of the Lunar Polar Regions Using LOLA Topography"
+    year: 2011
