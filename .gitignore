@@ -1,0 +1,34 @@
+# Raw datasets (see docs/datasets.md for source and download instructions)
+faustini_test_dem_100m.tif
+
+# Large regenerable intermediates (see docs/methodology.md for regeneration steps)
+horizon_angles.npy
+PSR_outputs/horizon_chunks/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# QGIS temporary lock files
+*.qgz~
+*.qgs~
+
+# IDE folders
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
