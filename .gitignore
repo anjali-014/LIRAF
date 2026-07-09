@@ -32,3 +32,6 @@ Thumbs.db
 # Logs and temporary files
 *.log
 *.tmp
+
+# Large generated raster
+outputs/rasters/hillshade.tif
