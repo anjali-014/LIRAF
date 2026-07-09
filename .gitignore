@@ -35,3 +35,7 @@ Thumbs.db
 
 # Large generated raster
 outputs/rasters/hillshade.tif
+
+
+# Local QGIS project
+qgis/*.qgz
